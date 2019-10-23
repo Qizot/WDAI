@@ -87,13 +87,14 @@ main {
 }
 
 #about {
+    max-width: 2000px;
     padding: 40px;
     margin:10px;
     height: 600px;
     align-content: center;
     display: grid;
-    grid-template-columns: 75% 25%;
-    grid-gap: 30px;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
 }
 
 #about div {
@@ -123,6 +124,13 @@ main {
 #bombowiec {
     width: 100%;
     max-height: 100%;
+    border-radius: 5%;
+}
+
+.bombowiec {
+    background-image: url(assets/bombowiec.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
     border-radius: 5%;
 }
 
