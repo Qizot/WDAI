@@ -20,12 +20,12 @@ nav {
     left: 0;
 }
 
-#navbar {
+.navbar {
     display: flex;
     justify-content: space-between;
 }
 
-#menu {
+.menu {
     list-style-type: none;
     height: 50px;
     margin: 0;
@@ -50,7 +50,7 @@ nav {
     color: #ffffff;
 }
 
-#menu li {
+.menu li {
     float: left;
     height: 100%;
     padding: 0 30px 0 30px;
@@ -58,12 +58,12 @@ nav {
     align-items: center;
 }
 
-#menu li:not(:first-child):hover {
+.menu li:not(:first-child):hover {
     background-color: rgba(0,0,0,.5);
     cursor: pointer;
 }
 
-#menu li a {
+.menu li a {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1em;
     color:inherit;
@@ -75,7 +75,7 @@ main {
     margin-top: 50px;
 }
 
-#home {
+.home {
     background-image: url("assets/asian_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -86,7 +86,7 @@ main {
     font-size: larger;
 }
 
-#about {
+.about {
     max-width: 2000px;
     padding: 40px;
     margin:10px;
@@ -97,7 +97,7 @@ main {
     gap: 20px;
 }
 
-#about div {
+.about div {
     text-align: center;
 }
 
@@ -121,12 +121,6 @@ main {
     text-align: center;
 }
 
-#bombowiec {
-    width: 100%;
-    max-height: 100%;
-    border-radius: 5%;
-}
-
 .bombowiec {
     background-image: url(assets/bombowiec.jpg);
     background-position: 50% 50%;
@@ -134,17 +128,17 @@ main {
     border-radius: 5%;
 }
 
-#recommendations {
+.recommendations {
     padding: 30px;
     width: 100%;
     overflow: hidden;
     align-content: center;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
 
-#contact {
+.contact {
     width: 100%;
     overflow: hidden;
     align-content: center;
@@ -171,6 +165,10 @@ main {
 
 .food-item figure {
     height: 50%;
+}
+
+.food-item figcaption {
+    margin-top: 20px;
 }
 
 .food-item img {
