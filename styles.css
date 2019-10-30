@@ -7,9 +7,83 @@ body {
     background-color: #63513c;
 }
 
+@media (max-width: 800px) {
+    .about {
+        margin:10px;
+        align-content: center;
+    }
+
+    .about-grid {  
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .recommendations-grid {
+        padding: 30px;
+        width: 100%;
+        overflow: hidden;
+        align-content: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "logo"
+        "footer1"
+        "footer4"
+        "footer2"
+        "footer5"
+        "footer6"
+        "footer3";
+    }
+
+    .info p {
+        padding: 5px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 801px) {
+    .about {
+        max-width: 2000px;
+        padding: 40px;
+        margin:10px;
+        align-content: center;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+
+    .recommendations-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        grid-template-areas: 
+        "logo footer1 footer2 footer3"
+        "logo footer4 footer5 footer6";
+    }
+    
+    .info p {
+        padding: 10px;
+    }
+}
+
 .logo {
     width: 100px;
-    height: 50px;
+    height: 75px;
 }
 
 nav {
@@ -27,7 +101,8 @@ nav {
 
 .menu {
     list-style-type: none;
-    height: 50px;
+    font-size: 1.5rem;
+    height: 75px;
     margin: 0;
     padding: 0;
     color: white;
@@ -38,7 +113,7 @@ nav {
 
 .login-button {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1em;
+    font-size: 1.5rem;
     color: white;
     background: none;
     border: none;
@@ -86,17 +161,6 @@ main {
     font-size: larger;
 }
 
-.about {
-    max-width: 2000px;
-    padding: 40px;
-    margin:10px;
-    height: 600px;
-    align-content: center;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-}
-
 .about div {
     text-align: center;
 }
@@ -133,20 +197,16 @@ main {
     width: 100%;
     overflow: hidden;
     align-content: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
+
 }
 
 .contact {
     width: 100%;
     overflow: hidden;
     align-content: center;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
     background-color: black;
 }
+
 
 .food-item {
     font-family: 'Josefin Sans', sans-serif;
@@ -188,8 +248,8 @@ footer {
 }
 
 .footer-logo {
+    grid-area: logo;
     text-align: center;
-    grid-row: 1/3;
 }
 
 .footer-logo img {
@@ -197,21 +257,40 @@ footer {
     height: 100px;
 }
 
-
-.info p {
-    padding: 10px;
-}
-
 .icons {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding: 5px
 }
 
 .icons a {
     text-decoration: none;
     color: white;
 }
+
+.footer1 {
+    grid-area: footer1;
+ }
+ .footer2 {
+    grid-area: footer2;
+ }
+ .footer3 {
+    grid-area: footer3;
+ }
+ .footer4 {
+    grid-area: footer4 
+ }
+ .footer5 {
+    grid-area: footer5;
+ }
+ .footer6 {
+    grid-area: footer6;
+ }
+
+
+
+
 
 
 
