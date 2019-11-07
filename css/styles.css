@@ -7,83 +7,16 @@ body {
     background-color: #63513c;
 }
 
-@media (max-width: 800px) {
-    .about {
-        margin:10px;
-        align-content: center;
-    }
-
-    .about-grid {  
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .recommendations-grid {
-        padding: 30px;
-        width: 100%;
-        overflow: hidden;
-        align-content: center;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 30px;
-    }
-
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: "logo"
-        "footer1"
-        "footer4"
-        "footer2"
-        "footer5"
-        "footer6"
-        "footer3";
-    }
-
-    .info p {
-        padding: 5px;
-        margin: 0;
-    }
-}
-
-@media (min-width: 801px) {
-    .about {
-        max-width: 2000px;
-        padding: 40px;
-        margin:10px;
-        align-content: center;
-    }
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 20px;
-    }
-
-    .recommendations-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 30px;
-    }
-
-    .contact-grid {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 10px;
-        grid-template-areas: 
-        "logo footer1 footer2 footer3"
-        "logo footer4 footer5 footer6";
-    }
-    
-    .info p {
-        padding: 10px;
-    }
-}
-
 .logo {
     width: 100px;
     height: 75px;
+}
+
+.section-header {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3em;
+    color: white;
+    text-align: center;
 }
 
 nav {
@@ -94,36 +27,21 @@ nav {
     left: 0;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
+#navbar {
+    height: 75px;
 }
 
 .menu {
     list-style-type: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     height: 75px;
     margin: 0;
     padding: 0;
     color: white;
     display: inline-flex;
     align-items: center;
-    width: 90%;
 }
 
-.login-button {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5rem;
-    color: white;
-    background: none;
-    border: none;
-    width: 10%;
-}
-  
-.login-button:hover {
-    background-color: rgba(0,0,0,.5);
-    color: #ffffff;
-}
 
 .menu li {
     float: left;
@@ -151,14 +69,28 @@ main {
 }
 
 .home {
-    background-image: url("assets/asian_background.jpg");
+    background-image: url("../assets/asian_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     color: white;
     font-family: 'Amatic SC', cursive;
     height: 600px;
-    font-size: larger;
+    font-size: 1.5rem;
+}
+
+
+.about {
+    max-width: 2000px;
+    padding: 30px;
+    margin: 10px;
+    align-content: center;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
 }
 
 .about div {
@@ -178,7 +110,7 @@ main {
     background-color: white;
     border-radius: 15px;
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
 .titled-paragraph h3 {
@@ -186,10 +118,16 @@ main {
 }
 
 .bombowiec {
-    background-image: url(assets/bombowiec.jpg);
+    background-image: url(../assets/bombowiec.jpg);
     background-position: 50% 50%;
     background-size: cover;
     border-radius: 5%;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
 }
 
 .recommendations {
@@ -200,11 +138,21 @@ main {
 
 }
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "logo footer1 footer2 footer3"
+    "logo footer4 footer5 footer6";
+}
+
 .contact {
     width: 100%;
     overflow: hidden;
     align-content: center;
     background-color: black;
+    padding-bottom: 10px;
 }
 
 
@@ -224,16 +172,19 @@ main {
 }
 
 .food-item figure {
-    height: 50%;
-}
+    margin: 0;
+    padding-top: 15px;
 
-.food-item figcaption {
-    margin-top: 20px;
 }
 
 .food-item img {
-    width: 80%;
-    height: 90%;
+    width: 90%;
+    height: auto;
+    border-radius: 40px;
+}
+
+.food-item figcaption {
+    margin-top: 10px;
 }
 
 .food-item p {
@@ -245,6 +196,10 @@ footer {
     font-size: 1em;
     color: white;
     text-align: center;
+}
+
+.info p {
+    padding: 10px;
 }
 
 .footer-logo {
@@ -288,8 +243,61 @@ footer {
     grid-area: footer6;
  }
 
+ @media (max-width: 800px) {
 
+    .home {
+        font-size: 1.2rem;
+    }
+    
+    .about {
+        padding: 0;
+        margin: 10px;
+        align-content: center;
+    }
 
+    .about-grid {  
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .recommendations-grid {
+        padding: 30px;
+        width: 100%;
+        overflow: hidden;
+        align-content: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: "logo"
+        "footer1"
+        "footer2"
+        "footer3";
+    }
+
+    .info p {
+        padding: 5px;
+        margin: 0;
+    }
+
+    .footer4 {
+        grid-area: footer4;
+        display: none;
+     }
+     .footer5 {
+        grid-area: footer5;
+        display: none;
+     }
+     .footer6 {
+        grid-area: footer6;
+        display: none;
+     }
+}
 
 
 
