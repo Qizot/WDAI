@@ -1,202 +1,253 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Culinary Shock</title>
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/carousel.css">
-        <link rel="stylesheet" href="css/grow_effect.css">
-        <link rel="stylesheet" href="css/navbar.css">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Culinary Shock</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <link rel="stylesheet" href="css/grow_effect.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
 
-        <link rel="shortcut icon" href="assets/favicon.png"/>
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <header>
-            <nav id="navbar" class="navbar">
-                <div class="first-menu">
-                    <img class="logo" src="assets/logo_transparent.png">
-                    <div id="menu" class="menu lg-visible">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#gallery">Gallery</a>
-                        <a href=#recommendations>Recommendations</a>
-                        <a href="#contact">Contact</a>
-                        <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
-                </div>
-                <div id="responsive-menu" class="responsive-menu sm-visible">
-                    <a href="#home" onclick="toggleResponsive()">Home</a>
-                    <a href="#about" onclick="toggleResponsive()">About</a>
-                    <a href="#gallery" onclick="toggleResponsive()">Gallery</a>
-                    <a href=#recommendations onclick="toggleResponsive()">Recommendations</a>
-                    <a href="#contact" onclick="toggleResponsive()">Contact</a>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <section id="home" class="home">
-                <div class="centered-headers">
-                    <h1>Welcome to the Culinary Shock!</h1>
-                    <h2>The smallest cullinary blog the world has ever seen and yet here we are! </h2>
-                    <h2>Prepare for nothing and expect the worst, you won't be surprised and the shame will fall on my enitre family!</h2>
-                </div>
-            </section>
+    <link rel="shortcut icon" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav id="navbar" class="navbar">
+        <div class="first-menu">
+          <img class="logo" src="assets/logo_transparent.png" />
+          <div id="menu" class="menu lg-visible">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#recipies">Recipies</a>
+            <a href="#contact">Contact</a>
+            <a
+              href="javascript:void(0);"
+              class="icon"
+              onclick="toggleResponsive()"
+            >
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+        </div>
+        <div id="responsive-menu" class="responsive-menu sm-visible">
+          <a href="#home" onclick="toggleResponsive()">Home</a>
+          <a href="#about" onclick="toggleResponsive()">About</a>
+          <a href="#gallery" onclick="toggleResponsive()">Gallery</a>
+          <a href="#recipies" onclick="toggleResponsive()">Recipies</a>
+          <a href="#contact" onclick="toggleResponsive()">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="home" class="home">
+        <div class="centered-headers">
+          <h1>Welcome to the Culinary Shock!</h1>
+          <h2>
+            The smallest cullinary blog the world has ever seen and yet here we
+            are!
+          </h2>
+          <h2>
+            Prepare for nothing and expect the worst, you won't be surprised and
+            the shame will fall on my enitre family!
+          </h2>
+        </div>
+      </section>
 
-            <section id="about" class="about">
-                <h1 class="section-header">About us</h1>
-                <div class="about-grid">
-                    <div class="titled-paragraph">
-                        <h3>
-                            About what?
-                        </h3>
-                        <h3>
-                            It's not me in the photo. This is an extremely dangerous person, known as 'Bombowiec'
-                        </h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis lacus non nibh suscipit, a congue nisl vestibulum. 
-                            Donec vel nisl dictum, rutrum dui eu, fermentum quam. Aliquam erat volutpat. 
-                            
-                        </p>
-                    </div>
-                    <figure>
-                        <img src="assets/professional_cook.jpeg">
-                    </figure>
-                </div>
-            </section>
+      <section id="about" class="about">
+        <h1 class="section-header">About us</h1>
+        <div class="about-grid">
+          <div class="titled-paragraph">
+            <h3>
+              About what?
+            </h3>
+            <h3>
+              It's not me in the photo. This is an extremely dangerous person,
+              known as 'Bombowiec'
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              lobortis lacus non nibh suscipit, a congue nisl vestibulum. Donec
+              vel nisl dictum, rutrum dui eu, fermentum quam. Aliquam erat
+              volutpat.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/professional_cook.jpeg" />
+          </figure>
+        </div>
+      </section>
 
-            <section id="gallery">
-                <h1 class="section-header">Our Gallery</h1>
-                <div>
-                    <div class="carousel">
-                        <ul class="slides">
-                            <input type="radio" name="radio-buttons" id="img-1" checked />
-                            <li class="slide-container">
-                                <div class="slide-image">
-                                    <img src="assets/restaurant1.jpg">
-                                </div>
-                                <div class="carousel-controls">
-                                    <label for="img-3" class="prev-slide">
-                                        <span>&lsaquo;</span>
-                                    </label>
-                                    <label for="img-2" class="next-slide">
-                                        <span>&rsaquo;</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <input type="radio" name="radio-buttons" id="img-2" />
-                            <li class="slide-container">
-                                <div class="slide-image">
-                                    <img src="assets/restaurant2.png">
-                                </div>
-                                <div class="carousel-controls">
-                                    <label for="img-1" class="prev-slide">
-                                        <span>&lsaquo;</span>
-                                    </label>
-                                    <label for="img-3" class="next-slide">
-                                        <span>&rsaquo;</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <input type="radio" name="radio-buttons" id="img-3" />
-                            <li class="slide-container">
-                                <div class="slide-image">
-                                    <img src="assets/restaurant3.jpg">
-                                </div>
-                                <div class="carousel-controls">
-                                    <label for="img-2" class="prev-slide">
-                                        <span>&lsaquo;</span>
-                                    </label>
-                                    <label for="img-1" class="next-slide">
-                                        <span>&rsaquo;</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <div class="carousel-dots">
-                                <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-                                <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-                                <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
-                            </div>
-                        </ul>
-                    </div>
+      <section id="gallery">
+        <h1 class="section-header">Our Gallery</h1>
+        <div>
+          <div class="carousel">
+            <ul class="slides">
+              <input type="radio" name="radio-buttons" id="img-1" checked />
+              <li class="slide-container">
+                <div class="slide-image">
+                  <img src="assets/restaurant1.jpg" />
                 </div>
-            </section>
+                <div class="carousel-controls">
+                  <label for="img-3" class="prev-slide">
+                    <span>&lsaquo;</span>
+                  </label>
+                  <label for="img-2" class="next-slide">
+                    <span>&rsaquo;</span>
+                  </label>
+                </div>
+              </li>
+              <input type="radio" name="radio-buttons" id="img-2" />
+              <li class="slide-container">
+                <div class="slide-image">
+                  <img src="assets/restaurant2.png" />
+                </div>
+                <div class="carousel-controls">
+                  <label for="img-1" class="prev-slide">
+                    <span>&lsaquo;</span>
+                  </label>
+                  <label for="img-3" class="next-slide">
+                    <span>&rsaquo;</span>
+                  </label>
+                </div>
+              </li>
+              <input type="radio" name="radio-buttons" id="img-3" />
+              <li class="slide-container">
+                <div class="slide-image">
+                  <img src="assets/restaurant3.jpg" />
+                </div>
+                <div class="carousel-controls">
+                  <label for="img-2" class="prev-slide">
+                    <span>&lsaquo;</span>
+                  </label>
+                  <label for="img-1" class="next-slide">
+                    <span>&rsaquo;</span>
+                  </label>
+                </div>
+              </li>
+              <div class="carousel-dots">
+                <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+                <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+                <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-            <section id="recommendations" class="recommendations">
-                <h1 class="section-header">Blog's recommendations</h1>
-                <div class="recommendations-grid">
-                    <article class="food-item hvr-grow">
-                        <figure>
-                            <img src="assets/raw_fish.jpg">
-                            <figcaption>Raw Fish</figcaption>
-                        </figure>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis lacus non nibh suscipit, a congue nisl vestibulum. 
-                            Donec vel nisl dictum, rutrum dui eu, fermentum quam. Aliquam erat volutpat.
-                        </p>
-                    </article>
-                    <article class="food-item hvr-grow">
-                        <figure>
-                                <img src="assets/random_bowls.jpg">
-                                <figcaption>Random Bowls</figcaption>
-                            </figure>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis lacus non nibh suscipit, a congue nisl vestibulum. 
-                                Donec vel nisl dictum, rutrum dui eu, fermentum quam. Aliquam erat volutpat.
-                            </p>
-                    </article>
-                    <article class="food-item hvr-grow">
-                        <figure>
-                                <img src="assets/ramen.jpg">
-                                <figcaption>Ramen</figcaption>
-                            </figure>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis lacus non nibh suscipit, a congue nisl vestibulum. 
-                                Donec vel nisl dictum, rutrum dui eu, fermentum quam. Aliquam erat volutpat.
-                            </p>
-                    </article>
-                </div>
-            </section>
-        </main>
+      <section id="recipies" class="recipies">
+        <h1 class="section-header">Blog's recipies</h1>
+        <div class="recipies-grid">
+          <article class="food-item hvr-grow">
+            <figure>
+              <img src="assets/raw_fish.jpg" />
+              <figcaption>Raw Fish</figcaption>
+            </figure>
+            <div class="ingredients">
+                <h3>Ingredients:</h3>
+                <ul>
+                  <li>Fish</li>
+                  <li>Rice</li>
+                  <li>Some love</li>
+                  <li>Salt</li>
+                </ul>
+            </div>
+            <h3>Preparation</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </article>
+          <article class="food-item hvr-grow">
+            <figure>
+              <img src="assets/random_bowls.jpg" />
+              <figcaption>Random Bowls</figcaption>
+            </figure>
+            <div class="ingredients">
+                <h3>Ingredients:</h3>
+                <ul>
+                  <li>Bowl</li>
+                  <li>Spoon and fork</li>
+                  <li>Wooden bowl</li>
+                  <li>More Bowls</li>
+                </ul>
+            </div>
+            <h3>Preparation</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </article>
+          <article class="food-item hvr-grow">
+            <figure>
+              <img src="assets/ramen.jpg" />
+              <figcaption>Ramen</figcaption>
+            </figure>
+            <div class="ingredients">
+                <h3>Ingredients:</h3>
+                <ul>
+                  <li>Pasta</li>
+                  <li>Broth</li>
+                  <li>Egg</li>
+                  <li>Some random meat</li>
+                </ul>
+            </div>
+            <h3>Preparation</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-        <footer>
-            <section id="contact" class="contact contact-grid">
-                <div class="footer-logo">
-                    <img src="assets/logo_transparent_cropped.png">
-                </div>
-                <div class="info footer1">
-                    <p>
-                        There is no contact whatsoever
-                    </p>
-                </div>
-                <div class="info footer2">
-                    <p>
-                        Want to call me? 911 is the answear!
-                    </p>
-                </div>
-                <div class="icons footer3">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-google"></a>
-                    <a href="#" class="fa fa-youtube"></a>
-                </div>
-                <div class="footer-second footer4">
-                    <p> Remember, no Contact</p>
-                </div>
-                <div class="footer-second footer5">
-                    <p>Don't call police!</p>
-                </div>
-                <div class="footer-second footer6">
-                    <p>Here you go with some random icons</p>
-                </div>
-            </section>
-        </footer>
+    <footer>
+      <section id="contact" class="contact contact-grid">
+        <div class="footer-logo">
+          <img src="assets/logo_transparent_cropped.png" />
+        </div>
+        <div class="info footer1">
+          <p>
+            There is no contact whatsoever
+          </p>
+        </div>
+        <div class="info footer2">
+          <p>
+            Want to call me? 911 is the answear!
+          </p>
+        </div>
+        <div class="icons footer3">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-google"></a>
+          <a href="#" class="fa fa-youtube"></a>
+        </div>
+        <div class="footer-second footer4">
+          <p>Remember, no Contact</p>
+        </div>
+        <div class="footer-second footer5">
+          <p>Don't call police!</p>
+        </div>
+        <div class="footer-second footer6">
+          <p>Here you go with some random icons</p>
+        </div>
+      </section>
+    </footer>
 
-        <script src="scripts/navbar.js"></script>
-    </body>
+    <script src="scripts/navbar.js"></script>
+  </body>
 </html>
