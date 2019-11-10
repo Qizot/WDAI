@@ -13,6 +13,4 @@ function toggleResponsive() {
   } else {
     menu.className = "responsive-menu";
   }
-
-
 }

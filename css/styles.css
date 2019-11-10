@@ -1,9 +1,10 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -18,55 +19,10 @@ body {
 
 .section-header {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 3em;
+    font-size: 2.5em;
     color: white;
     text-align: center;
 }
-
-/* nav {
-    width: 100%;
-    position: fixed;
-    background-color: #834655;
-    top: 0;
-    left: 0;
-    z-index: 9999;     
-}
-
-#navbar {
-    height: 60px;
-} */
-/* 
-.menu {
-    list-style-type: none;
-    font-size: 1.3rem;
-    height: 60px;
-    margin: 0;
-    padding: 0;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-}
-
-
-.menu li {
-    float: left;
-    height: 100%;
-    padding: 0 15px 0 15px;
-    display: flex;
-    align-items: center;
-}
-
-.menu li:not(:first-child):hover {
-    background-color: rgba(0,0,0,.5);
-    cursor: pointer;
-}
-
-.menu li a {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1em;
-    color:inherit;
-    text-decoration: none;
-} */
 
 
 main {
@@ -74,7 +30,7 @@ main {
 }
 
 .home {
-    background-image: url("../assets/asian_background.jpg");
+    background-image: url("../assets/vivid_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -82,6 +38,12 @@ main {
     font-family: 'Amatic SC', cursive;
     height: 600px;
     font-size: 1.5rem;
+    text-shadow: 1px -1px 0 #000000, -1px 2px 1px #151414, -2px 4px 1px #000000, -3px 6px 1px #000000, 6px 1px 20px rgba(0, 0, 0, 0);
+}
+
+.home h1, .home h2 {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 
@@ -92,10 +54,22 @@ main {
     align-content: center;
 }
 
+
 .about-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
     gap: 20px;
+}
+
+.about figure {
+    margin: 0;
+    display: inline-flex;
+}
+
+.about img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
 }
 
 .about div {
@@ -129,18 +103,17 @@ main {
     border-radius: 5%;
 }
 
-.recommendations-grid {
+.recipies-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
 
-.recommendations {
+.recipies {
     padding: 30px;
     width: 100%;
     overflow: hidden;
     align-content: center;
-
 }
 
 .contact-grid {
@@ -169,6 +142,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #131313;
+    border-radius: 10px;
 }
 
 .food-item:hover {
@@ -194,8 +169,26 @@ main {
 }
 
 .food-item p {
-    padding: 10px;
+    margin: 10px;
+    padding-bottom: 10px;
 }
+
+.ingredients {
+    text-align: left;
+}
+
+.ingredients h3 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.ingredients ul {
+    margin: 10px;
+}
+.food-item h3 {
+    margin: 10px;
+}
+
 
 footer {
     font-family: 'Josefin Sans', sans-serif;
@@ -251,6 +244,9 @@ footer {
 
  @media (max-width: 800px) {
 
+    .recipies {
+        padding: 0;
+    }
     .home {
         font-size: 1.2rem;
     }
@@ -264,10 +260,10 @@ footer {
     .about-grid {  
         display: grid;
         grid-template-columns: 1fr;
-        gap: 5px;
+        gap: 15px;
     }
 
-    .recommendations-grid {
+    .recipies-grid {
         padding: 30px;
         width: 100%;
         overflow: hidden;
