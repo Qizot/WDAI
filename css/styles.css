@@ -33,6 +33,7 @@ main {
     background-image: url("../assets/vivid_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     text-align: center;
     color: white;
     font-family: 'Amatic SC', cursive;
