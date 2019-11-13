@@ -25,6 +25,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -154,9 +156,9 @@
       <section id="recipies" class="recipies">
         <h1 class="section-header">Blog's recipies</h1>
         <div class="recipies-grid">
-          <article class="food-item hvr-grow">
+          <article id="raw_fish" class="food-item hvr-grow">
             <figure>
-              <img src="assets/raw_fish.jpg" />
+              <img src="assets/raw_fish1.jpg" />
               <figcaption>Raw Fish</figcaption>
             </figure>
             <div class="ingredients">
@@ -168,14 +170,16 @@
                   <li>Salt</li>
                 </ul>
             </div>
-            <h3>Preparation</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+            <div class="preparation">
+              <h3>Preparation</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+          </div>
           </article>
-          <article class="food-item hvr-grow">
+          <article id="random_bowls" class="food-item hvr-grow">
             <figure>
-              <img src="assets/random_bowls.jpg" />
+              <img src="assets/random_bowls1.jpg" />
               <figcaption>Random Bowls</figcaption>
             </figure>
             <div class="ingredients">
@@ -187,14 +191,16 @@
                   <li>More Bowls</li>
                 </ul>
             </div>
-            <h3>Preparation</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+            <div class="preparation">
+              <h3>Preparation</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
           </article>
-          <article class="food-item hvr-grow">
+          <article id="ramen" class="food-item hvr-grow">
             <figure>
-              <img src="assets/ramen.jpg" />
+              <img src="assets/ramen1.jpg" />
               <figcaption>Ramen</figcaption>
             </figure>
             <div class="ingredients">
@@ -206,10 +212,12 @@
                   <li>Some random meat</li>
                 </ul>
             </div>
-            <h3>Preparation</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+            <div class="preparation">
+              <h3>Preparation</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
           </article>
         </div>
       </section>
@@ -249,5 +257,6 @@
     </footer>
 
     <script src="scripts/navbar.js"></script>
+    <script src="scripts/recipies.js"></script>
   </body>
 </html>
