@@ -1,3 +1,6 @@
+
+$default-font: 'Josefin Sans', sans-serif;
+
 * {
     box-sizing: border-box;    
 }
@@ -24,6 +27,46 @@ body {
     text-align: center;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+    -webkit-appearance: none;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input, textarea {
+        border-radius: 5px;
+    }
+}
+
+.form-control {
+    padding: 5px;
+    font-family: $default-font;
+}
+
+.invalid-input {
+    border: red solid 2px;
+    background-color: #ff9393;
+}
+
+.valid-input {
+    border: green solid 2px;
+    background-color: #adf7b0;
+}
+
 .add-item-button {
     padding: 10px;
     position: fixed;
@@ -35,28 +78,69 @@ body {
     left: -150px;
     transition: left 0.3s ease-in-out;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 9998;
 
     &:hover {
         left: 0;
     }
+
+    h3 {
+        display: inline;
+    }
+
+    i {
+        padding: 10px 10px 10px 20px;
+    }
 }
 
-
-.add-item-button h3 {
-    display: inline;
-}
-
-.add-item-button i {
-    padding: 10px 10px 10px 20px;
-}
-
-.add-item-form {
+.add-item-container {
     position: fixed;
     top: 15%;
-    height: 500px;
+    left: -400px;
+    height: 600px;
     width: 400px;
+    padding: 30px;
     background-color: black;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: left 0.7s ease-in-out;
+    z-index: 9999;
+    font-family: $default-font;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .close-item-form {
+        position: absolute;
+        padding: 15px;
+        color: white;
+        top: 5px;
+        right: 5px;
+        font-size: 24px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .submit-button {
+        text-align: center;
+        margin-top: 20px;
+
+        button {
+            font-family: $default-font;
+            color: white;
+            background-color: #151212;
+            border: none;
+            font-size: x-large;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    }
 }
 
 main {
@@ -74,11 +158,11 @@ main {
     height: 600px;
     font-size: 1.5rem;
     text-shadow: 1px -1px 0 #000000, -1px 2px 1px #151414, -2px 4px 1px #000000, -3px 6px 1px #000000, 6px 1px 20px rgba(0, 0, 0, 0);
-}
 
-.home h1, .home h2 {
-    margin-left: 5%;
-    margin-right: 5%;
+    h1, h2 {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 
@@ -87,6 +171,21 @@ main {
     padding: 30px;
     margin: 0 auto;
     align-content: center;
+
+    figure {
+        margin: 0;
+        display: inline-flex;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    div {
+        text-align: center;
+    }
 }
 
 
@@ -94,21 +193,6 @@ main {
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 20px;
-}
-
-.about figure {
-    margin: 0;
-    display: inline-flex;
-}
-
-.about img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
-
-.about div {
-    text-align: center;
 }
 
 .centered-headers {
@@ -125,26 +209,19 @@ main {
     border-radius: 15px;
     padding: 10px;
     font-size: 1.1em;
+
+    h3 {
+        text-align: center;
+    }
 }
 
-.titled-paragraph h3 {
-    text-align: center;
-}
-
-.bombowiec {
-    background-image: url(../assets/bombowiec.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
-    border-radius: 5%;
-}
-
-.recipies-grid {
+.recipes-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
 
-.recipies {
+.recipes {
     padding: 30px;
     width: 100%;
     overflow: hidden;
@@ -179,66 +256,76 @@ main {
     justify-content: space-between;
     background-color: #131313;
     border-radius: 10px;
+
+    &:hover {
+        background-color: rgba(0,0,0,.5);
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    figure {
+        margin: 0;
+        padding-top: 15px;
+    }
+
+    img {
+        width: 90%;
+        height: auto;
+        border-radius: 40px;
+    }
+
+    figcaption {
+        margin-top: 10px;
+    }
+
+    p {
+        margin: 10px;
+        padding-bottom: 10px;
+    }
+
+    .recipe-details {
+        display: none;
+    }
 }
 
-.food-item:hover {
-    background-color: rgba(0,0,0,.5);
-    cursor: pointer;
-    border-radius: 10px;
+.blured-image {
+    filter: blur(5px);
 }
 
-.food-item figure {
-    margin: 0;
-    padding-top: 15px;
-
-}
-
-.food-item img {
-    width: 90%;
-    height: auto;
-    border-radius: 40px;
-}
-
-.food-item figcaption {
-    margin-top: 10px;
-}
-
-.food-item p {
-    margin: 10px;
-    padding-bottom: 10px;
-}
 
 .remove-food-item {
     display: flex;
     justify-content: flex-end;
     padding: 20px;
-}
 
-.remove-food-item i {
-    padding: 5px;
-    border-radius: 10px;
-}
+    i {
+        padding: 5px;
+        border-radius: 10px;
 
-.remove-food-item i:hover {
-    background-color: black;
+        &:hover {
+            background-color: black;
+        }
+    }
+
 }
 
 
 
 .ingredients {
     text-align: left;
-}
 
-.ingredients h3 {
-    text-align: center;
-    margin-bottom: 0;
-}
+    h3 {
+        text-align: center;
+        margin-bottom: 0;
+    }
 
-.ingredients ul {
-    margin: 10px;
-}
-.food-item h3 {
-    margin: 10px;
+    ul {
+        margin: 10px;
+    }
+
+    h3 {
+        margin: 10px;
+    }
 }
 
 
@@ -256,24 +343,25 @@ footer {
 .footer-logo {
     grid-area: logo;
     text-align: center;
-}
 
-.footer-logo img {
-    width: 100px;
-    height: 100px;
+    img {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .icons {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 5px
+    padding: 5px;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
 }
 
-.icons a {
-    text-decoration: none;
-    color: white;
-}
 
 .footer1 {
     grid-area: footer1;
@@ -296,7 +384,7 @@ footer {
 
  @media (max-width: 800px) {
 
-    .recipies {
+    .recipes {
         padding: 0;
     }
     .home {
@@ -315,7 +403,7 @@ footer {
         gap: 15px;
     }
 
-    .recipies-grid {
+    .recipes-grid {
         padding: 30px;
         width: 100%;
         overflow: hidden;

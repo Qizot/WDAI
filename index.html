@@ -36,7 +36,7 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#gallery">Gallery</a>
-            <a href="#recipies">Recipies</a>
+            <a href="#recipes">recipes</a>
             <a href="#contact">Contact</a>
             <a
               href="javascript:void(0);"
@@ -51,20 +51,46 @@
           <a href="#home" onclick="toggleResponsive()">Home</a>
           <a href="#about" onclick="toggleResponsive()">About</a>
           <a href="#gallery" onclick="toggleResponsive()">Gallery</a>
-          <a href="#recipies" onclick="toggleResponsive()">Recipies</a>
+          <a href="#recipes" onclick="toggleResponsive()">recipes</a>
           <a href="#contact" onclick="toggleResponsive()">Contact</a>
         </div>
       </nav>
     </header>
     <main>
 
-      <div class="add-item-button">
+      <div id="add-item-button" class="add-item-button">
         <h3>Add New Recipe</h3>
         <i class="fa fa-plus"></i>
       </div>
 
-      <div class="add-item-form">
-        
+      <div id="add-item-container" class="add-item-container">
+          <i class="fa fa-close close-item-form"></i>
+          <h2>Submit your Dish</h2>
+          <form onsubmit="return false;">
+              <div class="form-group">
+                <label for="dish-name">Fancy dish name</label>
+                <input id="dish-name" type="text" class="form-control" placeholder="Here goes your dish name" required />
+              </div>
+              <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <textarea id="ingredients" type="text" class="form-control" placeholder="List all your ingredients" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="preparation">Preparation</label>
+                <textarea id="preparation" type="text" class="form-control" placeholder="Show the world how to prepare this beauty" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="primary-image">First image</label>
+                <input id="primary-image" type="text" class="form-control" placeholder="Make sure it is a proper URL link" pattern="https?:[/|.|\w|\s|-]*\.(?:jpg|gif|png).*" required />
+              </div>
+              <div class="form-group">
+                <label for="secondary-image">Second image</label>
+                <input id="secondary-image" type="text" class="form-control" placeholder="Make sure it is a proper URL link" pattern="https?:[/|.|\w|\s|-]*\.(?:jpg|gif|png).*" required />
+              </div>
+              <div class="submit-button">
+                <button type="submit" >Share with the world!</button>
+              </div>
+          </form>
       </div>
 
       <section id="home" class="home">
@@ -162,9 +188,9 @@
         </div>
       </section>
 
-      <section id="recipies" class="recipies">
-        <h1 class="section-header">Blog's recipies</h1>
-        <div class="recipies-grid">
+      <section id="recipes" class="recipes">
+        <h1 class="section-header">Blog's recipes</h1>
+        <div id="recipes-grid" class="recipes-grid">
 
           <article id="raw_fish" class="food-item hvr-grow">
             <div class="food-item-content">
@@ -172,21 +198,23 @@
                 <img src="assets/raw_fish1.jpg" />
                 <figcaption>Raw Fish</figcaption>
               </figure>
-              <div class="ingredients">
-                  <h3>Ingredients:</h3>
-                  <ul>
-                    <li>Fish</li>
-                    <li>Rice</li>
-                    <li>Some love</li>
-                    <li>Salt</li>
-                  </ul>
+              <div class="recipe-details">
+                <div class="ingredients">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                      <li>Fish</li>
+                      <li>Rice</li>
+                      <li>Some love</li>
+                      <li>Salt</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                  <h3>Preparation</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
               </div>
-              <div class="preparation">
-                <h3>Preparation</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-            </div>
+              </div>
           </div>
           <div class="remove-food-item">
             <i class="fa fa-close"></i>
@@ -199,53 +227,30 @@
                 <img src="assets/random_bowls1.jpg" />
                 <figcaption>Random Bowls</figcaption>
               </figure>
-              <div class="ingredients">
-                  <h3>Ingredients:</h3>
-                  <ul>
-                    <li>Bowl</li>
-                    <li>Spoon and fork</li>
-                    <li>Wooden bowl</li>
-                    <li>More Bowls</li>
-                  </ul>
+              <div class="recipe-details">
+                <div class="ingredients">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                      <li>Bowl</li>
+                      <li>Spoon and fork</li>
+                      <li>Wooden bowl</li>
+                      <li>More Bowls</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                  <h3>Preparation</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
               </div>
-              <div class="preparation">
-                <h3>Preparation</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
               </div>
-            </div>
             <div class="remove-food-item">
                 <i class="fa fa-close"></i>
             </div>
           </article>
 
-          <article id="ramen" class="food-item hvr-grow">
-            <div class="food-item-content">
-              <figure>
-                <img src="assets/ramen1.jpg" />
-                <figcaption>Ramen</figcaption>
-              </figure>
-              <div class="ingredients">
-                  <h3>Ingredients:</h3>
-                  <ul>
-                    <li>Pasta</li>
-                    <li>Broth</li>
-                    <li>Egg</li>
-                    <li>Some random meat</li>
-                  </ul>
-              </div>
-              <div class="preparation">
-                <h3>Preparation</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
-            </div>
-            <div class="remove-food-item">
-                <i class="fa fa-close"></i>
-            </div>
-          </article>
+         
         </div>
       </section>
     </main>
@@ -285,9 +290,8 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="scripts/navbar.js"></script>
-    <script src="scripts/recipies.js"></script>
+    <script src="scripts/recipes.js"></script>
   </body>
 </html>
