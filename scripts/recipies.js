@@ -20,9 +20,18 @@ registerRecipe("random_bowls", {
 function registerRecipe(id, photos) {
     recipes[id] = photos;
     
-    $(`#${id}`).find("img").on('click', () => {
+    let recipe = $(`#${id}`);
+    recipe.find("img").on('click', () => {
         toggleRecipeDetails(id);`#{id}`
     });
+
+    recipe.find("i").on("click", () => {
+        console.log("should delete recipie");
+        unregisterRecipe(id);
+        recipe.fadeOut("slow", () => recipe.remove());
+        // recipe.remove();
+    })
+
 }
 
 function unregisterRecipe(id) {
@@ -30,17 +39,26 @@ function unregisterRecipe(id) {
 }
 
 function replaceRecipePhoto(id) {
-    let recipesImg = $(`#${id}`).find("img");
-    let currentImageSrc = recipesImg.attr("src");
-    console.log(currentImageSrc);
-    recipesImg.attr("src", recipes[id][currentImageSrc]);
+    let recipeImg = $(`#${id}`).find("img");
+    let currentImageSrc = recipeImg.attr("src");
+    recipeImg
+        .fadeOut("slow", () => {
+            recipeImg.attr("src", recipes[id][currentImageSrc]);
+            recipeImg.fadeIn("slow");
+        });
+
+
 }
 
 function toggleRecipeDetails(id) {
     let preparation = $(`#${id}`).find("div.preparation");
-    let nextDisplay = {"none": "block", "block": "none"};
     let currentDisplay = preparation.css("display");
 
-    preparation.css("display", nextDisplay[currentDisplay]);
+    if (currentDisplay === "none") {
+        preparation.fadeIn("slow");
+    } else {
+        preparation.fadeOut("slow");
+    }
+
     replaceRecipePhoto(id);
 }

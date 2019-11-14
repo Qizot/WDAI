@@ -26,7 +26,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -58,6 +57,16 @@
       </nav>
     </header>
     <main>
+
+      <div class="add-item-button">
+        <h3>Add New Recipe</h3>
+        <i class="fa fa-plus"></i>
+      </div>
+
+      <div class="add-item-form">
+        
+      </div>
+
       <section id="home" class="home">
         <div class="centered-headers">
           <h1>Welcome to the Culinary Shock!</h1>
@@ -156,67 +165,85 @@
       <section id="recipies" class="recipies">
         <h1 class="section-header">Blog's recipies</h1>
         <div class="recipies-grid">
+
           <article id="raw_fish" class="food-item hvr-grow">
-            <figure>
-              <img src="assets/raw_fish1.jpg" />
-              <figcaption>Raw Fish</figcaption>
-            </figure>
-            <div class="ingredients">
-                <h3>Ingredients:</h3>
-                <ul>
-                  <li>Fish</li>
-                  <li>Rice</li>
-                  <li>Some love</li>
-                  <li>Salt</li>
-                </ul>
+            <div class="food-item-content">
+              <figure>
+                <img src="assets/raw_fish1.jpg" />
+                <figcaption>Raw Fish</figcaption>
+              </figure>
+              <div class="ingredients">
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>Fish</li>
+                    <li>Rice</li>
+                    <li>Some love</li>
+                    <li>Salt</li>
+                  </ul>
+              </div>
+              <div class="preparation">
+                <h3>Preparation</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
             </div>
-            <div class="preparation">
-              <h3>Preparation</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+          </div>
+          <div class="remove-food-item">
+            <i class="fa fa-close"></i>
           </div>
           </article>
+
           <article id="random_bowls" class="food-item hvr-grow">
-            <figure>
-              <img src="assets/random_bowls1.jpg" />
-              <figcaption>Random Bowls</figcaption>
-            </figure>
-            <div class="ingredients">
-                <h3>Ingredients:</h3>
-                <ul>
-                  <li>Bowl</li>
-                  <li>Spoon and fork</li>
-                  <li>Wooden bowl</li>
-                  <li>More Bowls</li>
-                </ul>
+            <div class="food-item-content">
+              <figure>
+                <img src="assets/random_bowls1.jpg" />
+                <figcaption>Random Bowls</figcaption>
+              </figure>
+              <div class="ingredients">
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>Bowl</li>
+                    <li>Spoon and fork</li>
+                    <li>Wooden bowl</li>
+                    <li>More Bowls</li>
+                  </ul>
+              </div>
+              <div class="preparation">
+                <h3>Preparation</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
             </div>
-            <div class="preparation">
-              <h3>Preparation</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+            <div class="remove-food-item">
+                <i class="fa fa-close"></i>
             </div>
           </article>
+
           <article id="ramen" class="food-item hvr-grow">
-            <figure>
-              <img src="assets/ramen1.jpg" />
-              <figcaption>Ramen</figcaption>
-            </figure>
-            <div class="ingredients">
-                <h3>Ingredients:</h3>
-                <ul>
-                  <li>Pasta</li>
-                  <li>Broth</li>
-                  <li>Egg</li>
-                  <li>Some random meat</li>
-                </ul>
+            <div class="food-item-content">
+              <figure>
+                <img src="assets/ramen1.jpg" />
+                <figcaption>Ramen</figcaption>
+              </figure>
+              <div class="ingredients">
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>Pasta</li>
+                    <li>Broth</li>
+                    <li>Egg</li>
+                    <li>Some random meat</li>
+                  </ul>
+              </div>
+              <div class="preparation">
+                <h3>Preparation</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
             </div>
-            <div class="preparation">
-              <h3>Preparation</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+            <div class="remove-food-item">
+                <i class="fa fa-close"></i>
             </div>
           </article>
         </div>
@@ -256,6 +283,10 @@
       </section>
     </footer>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="scripts/navbar.js"></script>
     <script src="scripts/recipies.js"></script>
   </body>
