@@ -81,6 +81,16 @@ textarea {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   left: -150px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease-in-out;
   cursor: pointer;
@@ -93,6 +103,8 @@ textarea {
 
 .add-item-button h3 {
   display: inline;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .add-item-button i {
@@ -102,9 +114,9 @@ textarea {
 .add-item-container {
   position: fixed;
   top: 15%;
-  left: -400px;
+  left: -350px;
   height: 600px;
-  width: 400px;
+  width: 350px;
   padding: 30px;
   background-color: black;
   border-top-right-radius: 30px;

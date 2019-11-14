@@ -76,6 +76,10 @@ textarea {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     left: -150px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     transition: left 0.3s ease-in-out;
     cursor: pointer;
     z-index: 9998;
@@ -86,6 +90,8 @@ textarea {
 
     h3 {
         display: inline;
+        font-size: 1rem;
+        text-align: center;
     }
 
     i {
@@ -96,9 +102,9 @@ textarea {
 .add-item-container {
     position: fixed;
     top: 15%;
-    left: -400px;
+    left: -350px;
     height: 600px;
-    width: 400px;
+    width: 350px;
     padding: 30px;
     background-color: black;
     border-top-right-radius: 30px;

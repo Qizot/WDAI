@@ -16,21 +16,21 @@ function setupAddItemForm() {
     let addItemButton = $("#add-item-button");
     let addItemForm = $("#add-item-container");
     let openForm = () => addItemForm.css("left", "0");
-    let closeForm = () => addItemForm.css("left", "-400px");
+    let closeForm = () => addItemForm.css("left", "-350px");
 
-    let onSucces = () => {
+    let closeAndClean = () => {
         closeForm();
         setTimeout(() => {
             cleanForm();
-        }, 2000);
+        }, 1000);
     };
 
     addItemButton.click(openForm)
 
-    addItemForm.find("i.close-item-form").click(closeForm);
+    addItemForm.find("i.close-item-form").click(closeAndClean);
 
     addItemForm.find("button").on("click", (event) => {
-        handleAddItemFormSubmit(onSucces);
+        handleAddItemFormSubmit(closeAndClean);
     });
 
     for (let id of ["#primary-image", "#secondary-image"]) {
