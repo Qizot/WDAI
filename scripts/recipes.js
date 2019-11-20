@@ -181,16 +181,27 @@ function unregisterRecipe(id) {
 function replaceRecipePhoto(id) {
     let recipeImg = $(`#${id}`).find("img");
     let currentImageSrc = recipeImg.attr("src");
-    recipeImg
-        .fadeOut("slow", () => {
-            recipeImg.attr("src", recipes[id].photos[currentImageSrc]);
-            recipeImg.fadeIn("slow");
-            if (recipes[id].focused) {
-                recipeImg.addClass("blured-image");
-            } else {
-                recipeImg.removeClass("blured-image");
-            }
-        });
+    // recipeImg
+    //     .fadeOut("slow", () => {
+    //         recipeImg.attr("src", recipes[id].photos[currentImageSrc]);
+    //         recipeImg.fadeIn("slow");
+    //         if (recipes[id].focused) {
+    //             recipeImg.addClass("blured-image");
+    //         } else {
+    //             recipeImg.removeClass("blured-image");
+    //         }
+    //     });
+
+    const img  = recipeImg[0];
+    fadeOutEffect(img, 600, () => {
+        recipeImg.attr("src", recipes[id].photos[currentImageSrc]);
+        fadeInEffect(img, 600, () => {});
+        if (recipes[id].focused) {
+            recipeImg.addClass("blured-image");
+        } else {
+            recipeImg.removeClass("blured-image");
+        }
+    })
 
 
 }
@@ -203,7 +214,8 @@ function toggleRecipeDetails(id) {
         let ids = Object.keys(recipes);
         for (let key of ids) {
             if (recipes[key].focused) {
-                $(`#${key}`).find("div.recipe-details").fadeOut("slow");
+
+                fadeOutEffect($(`#${key}`).find("div.recipe-details")[0], 600);
                 recipes[key].focused = !recipes[key].focused;
                 replaceRecipePhoto(key);
             }
@@ -214,9 +226,9 @@ function toggleRecipeDetails(id) {
 
     replaceRecipePhoto(id);
     if (currentDisplay === "none") {
-        details.delay(600).fadeIn("slow");
+        fadeInEffect(details[0], 600);
     } else {
-        details.fadeOut("slow");
+        fadeOutEffect(details[0], 600);
     }
 
 }
