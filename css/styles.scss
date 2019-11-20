@@ -67,7 +67,17 @@ textarea {
     background-color: #adf7b0;
 }
 
+@keyframes border-pulsate {
+    0%   { border-color: rgba(255, 255, 255, 0.7); }
+    50%  { border-color: rgba(255, 255, 255, 0); }
+    100% { border-color: rgba(255, 255, 255, 0.7); }
+}
+    
 .add-item-button {
+    border: 1px solid black;
+    border-left: none;
+    animation: border-pulsate 2s infinite;
+
     padding: 10px;
     position: fixed;
     color: white;
@@ -84,8 +94,17 @@ textarea {
     cursor: pointer;
     z-index: 9998;
 
-    &:hover {
-        left: 0;
+
+
+    @media screen and (min-width: 400px) {
+        &:hover {
+            left: 0;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        height: 50px;
+        top: 40%;
     }
 
     h3 {
@@ -113,6 +132,12 @@ textarea {
     z-index: 9999;
     font-family: $default-font;
     color: white;
+
+    @media screen and (max-height: 600px) {
+        top: 5%;
+        height: 90vh;
+        overflow-y: scroll;
+    }
 
     display: flex;
     flex-direction: column;

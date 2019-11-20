@@ -72,7 +72,35 @@ textarea {
   background-color: #adf7b0;
 }
 
+@-webkit-keyframes border-pulsate {
+  0% {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes border-pulsate {
+  0% {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
 .add-item-button {
+  border: 1px solid black;
+  border-left: none;
+  -webkit-animation: border-pulsate 2s infinite;
+          animation: border-pulsate 2s infinite;
   padding: 10px;
   position: fixed;
   color: white;
@@ -97,8 +125,17 @@ textarea {
   z-index: 9998;
 }
 
-.add-item-button:hover {
-  left: 0;
+@media screen and (min-width: 400px) {
+  .add-item-button:hover {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .add-item-button {
+    height: 50px;
+    top: 40%;
+  }
 }
 
 .add-item-button h3 {
@@ -139,6 +176,14 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-height: 600px) {
+  .add-item-container {
+    top: 5%;
+    height: 90vh;
+    overflow-y: scroll;
+  }
 }
 
 .add-item-container .close-item-form {
