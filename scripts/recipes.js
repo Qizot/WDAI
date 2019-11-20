@@ -1,6 +1,7 @@
 
 // add recipie form
 var imageUrlPattern = /https?:[/|.|\w|\s|-]*\.(?:jpg|gif|png).*/g;
+var focusedFoodItem = undefined;
 
 function cleanForm() {
     ["dish-name", "ingredients", "preparation", "primary-image", "secondary-image"]
@@ -160,7 +161,7 @@ registerRecipe("random_bowls", {
 });
 
 function registerRecipe(id, photos) {
-    recipes[id] = {photos: photos, focused: false};
+    recipes[id] = {photos: photos};
     
     let recipe = $(`#${id}`);
     recipe.find("img").on('click', () => {
@@ -181,48 +182,30 @@ function unregisterRecipe(id) {
 function replaceRecipePhoto(id) {
     let recipeImg = $(`#${id}`).find("img");
     let currentImageSrc = recipeImg.attr("src");
-    // recipeImg
-    //     .fadeOut("slow", () => {
-    //         recipeImg.attr("src", recipes[id].photos[currentImageSrc]);
-    //         recipeImg.fadeIn("slow");
-    //         if (recipes[id].focused) {
-    //             recipeImg.addClass("blured-image");
-    //         } else {
-    //             recipeImg.removeClass("blured-image");
-    //         }
-    //     });
 
     const img  = recipeImg[0];
     fadeOutEffect(img, 600, () => {
         recipeImg.attr("src", recipes[id].photos[currentImageSrc]);
         fadeInEffect(img, 600, () => {});
-        if (recipes[id].focused) {
+        if (focusedFoodItem === id) {
             recipeImg.addClass("blured-image");
         } else {
             recipeImg.removeClass("blured-image");
         }
     })
-
-
 }
 
 function toggleRecipeDetails(id) {
     let details = $(`#${id}`).find("div.recipe-details");
     let currentDisplay = details.css("display");
     
-    if (!recipes[id].focused) {
-        let ids = Object.keys(recipes);
-        for (let key of ids) {
-            if (recipes[key].focused) {
-
-                fadeOutEffect($(`#${key}`).find("div.recipe-details")[0], 600);
-                recipes[key].focused = !recipes[key].focused;
-                replaceRecipePhoto(key);
-            }
+    if (focusedFoodItem !== id) {
+        if (focusedFoodItem) {
+            fadeOutEffect($(`#${focusedFoodItem}`).find("div.recipe-details")[0], 600);
+            replaceRecipePhoto(focusedFoodItem);
         }
+        focusedFoodItem = id;
     }
-
-    recipes[id].focused = !recipes[id].focused;
 
     replaceRecipePhoto(id);
     if (currentDisplay === "none") {
