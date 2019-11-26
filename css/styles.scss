@@ -1,4 +1,6 @@
 
+@import 'animations';
+
 $default-font: 'Josefin Sans', sans-serif;
 
 * {
@@ -315,6 +317,8 @@ main {
     }
 
     .recipe-details {
+        transition: opacity 0.6s ease-in-out;
+        opacity: 1;
         display: none;
     }
 }

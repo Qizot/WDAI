@@ -2,6 +2,7 @@
 // add recipie form
 var imageUrlPattern = /https?:[/|.|\w|\s|-]*\.(?:jpg|gif|png).*/g;
 var focusedFoodItem = undefined;
+var previousFocusedFoodItem = undefined;
 
 function cleanForm() {
     ["dish-name", "ingredients", "preparation", "primary-image", "secondary-image"]
@@ -93,7 +94,7 @@ function addItem({dishName, ingredients, preparation, firstImage, secondImage}) 
     <article id="${id}" class="food-item hvr-grow">
         <div class="food-item-content">
         <figure>
-            <img src="${firstImage}" />
+            <img class="animate-opacity" src="${firstImage}" />
             <figcaption>${dishName}</figcaption>
         </figure>
         <div class="recipe-details">
@@ -162,6 +163,11 @@ registerRecipe("random_bowls", {
 
 function registerRecipe(id, photos) {
     recipes[id] = {photos: photos};
+
+    for (let image of Object.values(photos)) {
+        var img = new Image ();
+        img.src = image;
+    }
     
     let recipe = $(`#${id}`);
     recipe.find("img").on('click', () => {
@@ -184,15 +190,18 @@ function replaceRecipePhoto(id) {
     let currentImageSrc = recipeImg.attr("src");
 
     const img  = recipeImg[0];
-    fadeOutEffect(img, 600, () => {
-        recipeImg.attr("src", recipes[id].photos[currentImageSrc]);
-        fadeInEffect(img, 600, () => {});
-        if (focusedFoodItem === id) {
+
+    recipeImg.css("opacity", "0");
+    setTimeout(() => {
+        if (focusedFoodItem === id && focusedFoodItem !== previousFocusedFoodItem) {
+            previousFocusedFoodItem = focusedFoodItem;
             recipeImg.addClass("blured-image");
         } else {
             recipeImg.removeClass("blured-image");
         }
-    })
+        recipeImg.attr("src", recipes[id].photos[currentImageSrc]);
+        recipeImg.css("opacity", "1");
+    }, 600);
 }
 
 function toggleRecipeDetails(id) {
@@ -201,7 +210,9 @@ function toggleRecipeDetails(id) {
     
     if (focusedFoodItem !== id) {
         if (focusedFoodItem) {
-            fadeOutEffect($(`#${focusedFoodItem}`).find("div.recipe-details")[0], 600);
+            let focusedDetails = $(`#${focusedFoodItem}`).find("div.recipe-details");
+            focusedDetails.css("opacity", "0");
+            setTimeout(() => focusedDetails.css("display", "none"), 600);
             replaceRecipePhoto(focusedFoodItem);
         }
         focusedFoodItem = id;
@@ -209,9 +220,12 @@ function toggleRecipeDetails(id) {
 
     replaceRecipePhoto(id);
     if (currentDisplay === "none") {
-        fadeInEffect(details[0], 600);
+        details.css("display", "inline-block");
+        details.css("opacity", "0");
+        setTimeout(() => details.css("opacity", "1"), 50);        
     } else {
-        fadeOutEffect(details[0], 600);
+        details.css("opacity", "0");
+        setTimeout(() => details.css("display", "none"), 600);
     }
 
 }
